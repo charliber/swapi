@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrincipalComponent } from './componentes/principal/principal/principal.component';
 import { MenuLateralComponent } from './componentes/menu/menu-lateral/menu-lateral.component';
@@ -19,41 +20,29 @@ import { PeliculaComponent } from './componentes/peliculas/pelicula/pelicula.com
 import { PeliculasComponent } from './componentes/peliculas/peliculas/peliculas.component';
 
 @NgModule({
-  declarations: [
-    
-  PrincipalComponent,
-    
-  MenuLateralComponent,
-    
-  EspeciesComponent,
-    
-  PersonajeComponent,
-    
-  PersonajesComponent,
-    
-  EspecieComponent,
-    
-  PlanetaComponent,
-    
-  PlanetasComponent,
-    
-  NaveComponent,
-    
-  NavesComponent,
-    
-  VehiculoComponent,
-    
-  VehiculosComponent,
-    
-  PeliculaComponent,
-    
-  PeliculasComponent],
+  declarations: [  
+    AppComponent,
+    PrincipalComponent,      
+    MenuLateralComponent,      
+    EspeciesComponent,      
+    PersonajeComponent,      
+    PersonajesComponent,      
+    EspecieComponent,      
+    PlanetaComponent,      
+    PlanetasComponent,      
+    NaveComponent,      
+    NavesComponent,      
+    VehiculoComponent,      
+    VehiculosComponent,      
+    PeliculaComponent,      
+    PeliculasComponent
+  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
+    AppRoutingModule,    
+    BrowserAnimationsModule    
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
