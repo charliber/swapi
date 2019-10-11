@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule,MatButtonModule } from '@angular/material'
+
 import { PrincipalComponent } from './componentes/principal/principal/principal.component';
-import { MenuLateralComponent } from './componentes/menu/menu-lateral/menu-lateral.component';
 import { EspeciesComponent } from './componentes/especies/especies/especies.component';
 import { PersonajeComponent } from './componentes/personajes/personaje/personaje.component';
 import { PersonajesComponent } from './componentes/personajes/personajes/personajes.component';
@@ -23,7 +25,6 @@ import { PeliculasComponent } from './componentes/peliculas/peliculas/peliculas.
   declarations: [  
     AppComponent,
     PrincipalComponent,      
-    MenuLateralComponent,      
     EspeciesComponent,      
     PersonajeComponent,      
     PersonajesComponent,      
@@ -40,7 +41,10 @@ import { PeliculasComponent } from './componentes/peliculas/peliculas/peliculas.
   imports: [
     BrowserModule,
     AppRoutingModule,    
-    BrowserAnimationsModule    
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatButtonModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

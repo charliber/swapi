@@ -1,11 +1,11 @@
-<nav></nav>
-<section>
-  <aside>
-    <i class="material-icons">vertical_split</i>
-    <i class="material-icons">view_list</i><br>
-    <app-menu-lateral></app-menu-lateral>
-  </aside>
-  <main>
-    <article></article>
-  </main>
-</section>
+
+<mat-sidenav-container class="contenedor">
+    <mat-sidenav #sidenav mode="over">
+            <nav><button mat-button (click)="sidenav.toggle()">Menu</button> Inicio &gt;</nav>
+test menu
+    </mat-sidenav>
+    <mat-sidenav-content>
+            <nav><button mat-button (click)="sidenav.toggle()">Menu</button> Inicio &gt;</nav>
+    test
+    </mat-sidenav-content>
+</mat-sidenav-container>

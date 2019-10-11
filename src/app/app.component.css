@@ -3,9 +3,6 @@ nav{
     background-image: linear-gradient(to right,#aaaaaa,#f1f1f1);
 }
 
-aside{
-    width: 20%;
+.contenedor {
     min-height: 500px;
-    height: 100%;
-    background-image: linear-gradient(#aaaaaa,#f1f1f1);
 }
