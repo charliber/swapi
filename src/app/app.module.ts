@@ -5,7 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatSidenavModule,MatButtonModule } from '@angular/material'
+import { MatSidenavModule,MatTableModule, MatListModule,MatButtonModule, MatTabsModule } from '@angular/material'
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { PrincipalComponent } from './componentes/principal/principal/principal.component';
 import { EspeciesComponent } from './componentes/especies/especies/especies.component';
@@ -44,7 +45,11 @@ import { PeliculasComponent } from './componentes/peliculas/peliculas/peliculas.
     BrowserAnimationsModule,
     HttpClientModule,
     MatSidenavModule,
-    MatButtonModule 
+    MatTabsModule,
+    MatTableModule,
+    MatListModule,
+    MatButtonModule,
+    NgbCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

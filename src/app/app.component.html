@@ -1,11 +1,24 @@
-
+<nav>
+    <button mat-button (click)="sidenav.toggle()">
+        <i class="material-icons">view_list</i> Menu   
+    </button>
+</nav>
 <mat-sidenav-container class="contenedor">
-    <mat-sidenav #sidenav mode="over">
-            <nav><button mat-button (click)="sidenav.toggle()">Menu</button> Inicio &gt;</nav>
-test menu
+    <mat-sidenav #sidenav (click)="sidenav.toggle()" mode="over">
+        <mat-nav-list class="menu">
+            <a mat-list-item [routerLink]="'/principal'"> <i class="material-icons">home</i>&nbsp;&nbsp;Inicio</a>
+            <a mat-list-item [routerLink]="'/peliculas'"> <i class="material-icons">movie</i>&nbsp;&nbsp;Peliculas</a>
+            <a mat-list-item [routerLink]="'/personajes'"> <i class="material-icons">face</i>&nbsp;&nbsp;Personajes</a>
+            <a mat-list-item [routerLink]="'/planetas'"> <i class="material-icons">language</i>&nbsp;&nbsp;Planetas</a>
+            <a mat-list-item [routerLink]="'/especies'"> <i class="material-icons">nature_people</i>&nbsp;&nbsp;Especies</a>
+            <a mat-list-item [routerLink]="'/naves'"> <i class="material-icons">flight</i>&nbsp;&nbsp;Naves</a>
+            <a mat-list-item [routerLink]="'/vehiculos'"> <i class="material-icons">directions_car</i>&nbsp;&nbsp;Vehiculos</a>
+        </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-            <nav><button mat-button (click)="sidenav.toggle()">Menu</button> Inicio &gt;</nav>
-    test
+        <div class="contenido">
+            <router-outlet></router-outlet>
+        </div>
+        <footer>STAR WARS - Angular 8 Frontend</footer>
     </mat-sidenav-content>
 </mat-sidenav-container>

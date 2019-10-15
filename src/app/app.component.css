@@ -1,8 +1,15 @@
 nav{
-    height: 30px;
-    background-image: linear-gradient(to right,#aaaaaa,#f1f1f1);
+    height: 35px;
+    background-image: linear-gradient(to right,silver,white,silver);
+    padding: 0;
 }
 
 .contenedor {
-    min-height: 500px;
+    max-height: 70%;
+    overflow: auto;
+}
+
+.menu {
+    margin-top: 20px;
+    margin-right: 50px;
 }
