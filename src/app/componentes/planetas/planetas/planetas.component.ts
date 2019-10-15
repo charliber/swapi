@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
+import { PlanetasService } from "../../../servicios/planetas.service";
+import { Planeta } from "../../../clases/planeta";
 
 @Component({
   selector: 'app-planetas',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanetasComponent implements OnInit {
 
-  constructor() { }
+  planetas: Observable<Planeta[]>;
+
+  constructor(private planetaSrv:PlanetasService) { }
 
   ngOnInit() {
+    this.planetaSrv.getPlanetas().subscribe(
+      data => {        
+        this.planetas = data['results'];        
+      });      
   }
 
 }

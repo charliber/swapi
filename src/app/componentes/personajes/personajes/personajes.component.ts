@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
+import { PersonajesService } from "../../../servicios/personajes.service";
+import { Personaje } from "../../../clases/personaje";
 
 @Component({
   selector: 'app-personajes',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonajesComponent implements OnInit {
 
-  constructor() { }
+  personajes: Observable<Personaje[]>;
+
+  constructor(private personajeSrv:PersonajesService) { }
 
   ngOnInit() {
+    this.personajeSrv.getPersonajes().subscribe(
+      data => {        
+        this.personajes = data['results'];        
+      });      
   }
 
 }

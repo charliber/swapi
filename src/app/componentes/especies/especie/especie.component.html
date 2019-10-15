@@ -1,1 +1,40 @@
-<p>especie works!</p>
+<h1>{{especie.name}}</h1>
+<div class="contenido">
+    
+    <label><b>Clasificación :</b> {{especie.classification}}</label><br>
+    <label><b>Denominación :</b> {{especie.designation}}</label><br>
+    <label><b>Altura promedio : </b> {{especie.average_height}}</label><br>
+    <label><b>Colores de cabello : </b> {{especie.hair_colors}}</label><br>
+    <label><b>Colores de piel : </b> {{especie.skin_colors}}</label><br>
+    <label><b>Colores de ojos : </b> {{especie.eye_colors}}</label><br>
+    <label><b>Edad máxima promedio : </b> {{especie.average_lifespan}}</label><br>
+    <label><b>Lenguage : </b> {{especie.language}}</label><br>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Personajes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let character of especie.people">            
+                <td>{{character}}</td>
+            </tr>
+        </tbody>
+    </table> 
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Pelicula</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let film of especie.films">            
+                <td>{{film}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a mat-raised-button [routerLink]="'/especies'"> <i class="material-icons">nature_people</i>&nbsp;&nbsp;Especies</a>
+</div>

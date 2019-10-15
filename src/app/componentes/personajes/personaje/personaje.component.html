@@ -1,1 +1,65 @@
-<p>personaje works!</p>
+<h1>{{personaje.name}}</h1>
+<div class="contenido">
+    <!-- <img [src]="" alt="Foto del personaje"><br><br> -->
+    <label><b>Altura :</b> {{personaje.height}}</label><br>
+    <label><b>Peso :</b> {{personaje.mass}}</label><br>
+    <label><b>Color de piel : </b> {{personaje.skin_color}}</label><br>
+    <label><b>Color de cabello : </b> {{personaje.hair_color}}</label><br>
+    <label><b>Color de ojos : </b> {{personaje.eye_color}}</label><br>
+    <label><b>Fecha de nacimiento : </b> {{personaje.birth_year}}</label><br>
+    <label><b>Género : </b></label> {{personaje.gender}}<br>
+    <label><b>Planeta de orígen : </b> {{personaje.homeworld}}</label><br>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Especie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let especie of personaje.species">            
+                <td>{{especie}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Pelicula</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pelicula of personaje.films">            
+                <td>{{pelicula}}</td>
+            </tr>
+        </tbody>
+    </table> 
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Nave</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let nave of personaje.stacrships">            
+                <td>{{nave}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Vehiculo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vehiculo of personaje.vehicles">            
+                    <td>{{vehiculo}}</td>
+                </tr>
+            </tbody>
+        </table>
+    <a mat-raised-button [routerLink]="'/personajes'"> <i class="material-icons">face</i>&nbsp;&nbsp;Personajes</a>
+</div>

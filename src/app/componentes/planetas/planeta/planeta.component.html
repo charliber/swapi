@@ -1,1 +1,39 @@
-<p>planeta works!</p>
+<h1> {{planeta.name}}</h1>
+<div class="contenido">
+    <label><b>Periodo de rotación :</b> {{planeta.rotation_period}}</label><br>
+    <label><b>Periodo Orbital :</b> {{planeta.orbital_period}}</label> <br>
+    <label><b>Diametro : </b> {{planeta.diameter}}</label><br>
+    <label><b>Clima : </b> {{planeta.climate}}</label><br>
+    <label><b>Gravedad : </b> {{planeta.gravity}}</label><br>
+    <label><b>Terreno : </b> {{planeta.terrain}}</label><br>
+    <label><b>Superficie acuática : </b> {{planeta.surface_water}}</label><br>
+    <label><b>Población : </b> {{planeta.population}}</label><br>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Pelicula</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pelicula of planeta.films">            
+                <td>{{pelicula}}</td>                
+            </tr>
+        </tbody>
+    </table> 
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Residente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let residente of planeta.residents">            
+                <td>{{residente}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a mat-raised-button [routerLink]="'/planetas'"> <i class="material-icons">language</i>&nbsp;&nbsp;Planetas</a>
+</div>
