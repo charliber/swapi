@@ -1,1 +1,100 @@
-<p>principal works!</p>
+<ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[3]" alt="Poster Episodio 4">
+        </div>
+        <div class="carousel-caption">
+            <h3>Star Wars: Episodio IV</h3>
+            <p>Star Wars: Episodio IV - Una nueva esperanza</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[4]" alt="Poster Episodio 5">
+        </div>
+        <div class="carousel-caption">
+            <h3>Star Wars: Episodio V</h3>
+            <p>Star Wars: Episodio V - El Imperio contraataca</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[5]" alt="Poster Episodio 6">
+        </div>
+        <div class="carousel-caption">
+            <h3>Star Wars: Episodio VI</h3>
+            <p>Star Wars: Episodio VI - El retorno del Jedi</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="Poster Episodio 1">
+        </div>
+        <div class="carousel-caption">
+            <h3>Star Wars: Episodio I</h3>
+            <p>Star Wars: Episodio I - La amenaza fantasma.</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[1]" alt="Poster Episodio 2">
+        </div>
+        <div class="carousel-caption">
+            <h3>Star Wars: Episodio II</h3>
+            <p>Star Wars: Episodio II - El ataque de los clones</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[2]" alt="Poster Episodio 3">
+        </div>
+        <div class="carousel-caption">
+            <h3>Star Wars: Episodio III</h3>
+            <p>Star Wars: Episodio III - La venganza de los Sith</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[6]" alt="Poster Episodio 7">
+        </div>
+        <div class="carousel-caption">
+            <h3>Star Wars: Episodio VII</h3>
+            <p>Star Wars: Episodio VII - El despertar de la Fuerza</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[7]" alt="Poster Episodio 8">
+        </div>
+        <div class="carousel-caption">
+            <h3>Star Wars: Episodio VIII</h3>
+            <p>Star Wars: Episodio VIII - Los últimos Jedi</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[8]" alt="Poster Episodio 9">
+        </div>
+        <div class="carousel-caption">
+            <h3>Star Wars: Episodio IX</h3>
+            <p>Star Wars: Episodio IX - El ascenso de Skywalker</p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Portada</th>
+            <th>Pelicula</th>
+            <th>Detalle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pelicula of peliculas">            
+            <td><img [src]='"assets/images/episodio"+pelicula.episode_id +".jpeg"' alt="Poster pelicula"></td>
+            <td>{{pelicula.title}}</td>
+            <td><a mat-raised-button [routerLink]='"/pelicula/"+pelicula.episode_id'>Ver Detalle</a></td>
+        </tr>
+    </tbody>
+</table>

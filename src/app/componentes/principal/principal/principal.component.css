@@ -1,0 +1,21 @@
+ngb-carousel {
+   margin: 20px;
+}
+
+ngb-carousel .picsum-img-wrapper {
+    justify-content: center;
+    text-align: center;
+    background-image: radial-gradient(gray,silver,#dddddd,silver,gray);
+    padding: 10px;
+}
+
+table td{
+    font-size: .8em;
+    width: 97%;
+    margin: 20px;
+  }
+table td{
+    text-align: center;
+    vertical-align: middle;
+}
+ 

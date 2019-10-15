@@ -1,1 +1,79 @@
-<p>pelicula works!</p>
+<h1>{{ pelicula.title }}</h1>
+<div class="contenido">
+     <mat-tab-group mat-stretch-tabs>
+        <mat-tab label="Trailer">
+            <p>
+                <iframe width="600" height="300" [src]='safeSrc' frameborder="0" allowfullscreen></iframe>
+            </p>
+        </mat-tab>
+        <mat-tab label="Caratula"> <img [src]='"assets/images/episodio"+pelicula.episode_id +".jpeg"' alt="Poster pelicula"> </mat-tab>
+        <mat-tab label="Poster"> <img [src]='"assets/images/episodio"+pelicula.episode_id +".jpeg"' alt="Poster pelicula"> </mat-tab>
+    </mat-tab-group>
+    <label><b>Leyenda de Introducción:</b></label><br>
+    <textarea disabled style="width: 100%;height: 150px;">{{ pelicula.opening_crawl }}</textarea><br>
+    <label><b>Director :</b> {{ pelicula.director }}</label><br>
+    <label><b>Productor(es) : </b> {{ pelicula.producer }}</label><br>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Personaje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let character of pelicula.characters">            
+                <td>{{character}}</td>                
+            </tr>
+        </tbody>
+    </table> 
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Planeta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let planet of pelicula.planets">            
+                <td>{{planet}}</td>                
+            </tr>
+        </tbody>
+    </table> 
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Nave</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let starship of pelicula.starships">            
+                <td>{{starship}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Especie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let specie of pelicula.species">            
+                <td>{{specie}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Vehiculo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vehicle of pelicula.vehicles">            
+                <td>{{vehicle}}</td>
+            </tr>
+        </tbody>
+    </table> 
+    <a mat-raised-button [routerLink]="'/peliculas'"> <i class="material-icons">movie</i>&nbsp;&nbsp;Peliculas</a>
+</div>
