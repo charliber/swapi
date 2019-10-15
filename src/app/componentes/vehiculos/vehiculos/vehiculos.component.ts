@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { VehiculosService } from 'src/app/servicios/vehiculos.service';
+import { Observable } from 'rxjs';
+import { Vehiculo } from 'src/app/clases/vehiculo';
 
 @Component({
   selector: 'app-vehiculos',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VehiculosComponent implements OnInit {
 
-  constructor() { }
+  vehiculos : Observable<Vehiculo[]>;
+
+  constructor(private vehiculoSrv: VehiculosService) { }
 
   ngOnInit() {
+    this.vehiculoSrv.getVehiculos().subscribe(data => {
+      console.log(data);
+      this.vehiculos = data['results'];
+    });
   }
 
 }

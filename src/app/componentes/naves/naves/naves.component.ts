@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
+import { NavesService } from "../../../servicios/naves.service";
+import { Nave } from "../../../clases/nave";
 
 @Component({
   selector: 'app-naves',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavesComponent implements OnInit {
 
-  constructor() { }
+  naves: Observable<Nave[]>;
+
+  constructor(private naveSrv:NavesService) { }
 
   ngOnInit() {
+    this.naveSrv.getNaves().subscribe(
+      data => {        
+        this.naves = data['results'];        
+      });      
   }
 
 }

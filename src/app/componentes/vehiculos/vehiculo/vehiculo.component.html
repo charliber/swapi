@@ -1,1 +1,39 @@
-<p>vehiculo works!</p>
+<h1>{{vehiculo.name}}</h1>
+<div class="contenido">
+    <label><b>Modelo :</b> {{vehiculo.model}}</label><br>
+    <label><b>Fabricante :</b> {{vehiculo.manufacturer}}</label><br>
+    <label><b>Costo en creditos : </b> {{vehiculo.cost_in_credits}}</label><br>
+    <label><b>Velocidad máxima atmosférica : </b> {{vehiculo.max_atmosphering_speed}}</label><br>
+    <label><b>Tripulantes : </b> {{vehiculo.crew}}</label><br>
+    <label><b>Pasajeros : </b> {{vehiculo.passengers}}</label><br>
+    <label><b>Combustible : </b> {{vehiculo.consumables}}</label><br>
+    <label><b>Capacidad de carga : </b> {{vehiculo.cargo_capacity}}</label><br>
+    <label><b>Longitud : </b> {{vehiculo.length}}</label><br>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Pelicula</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pelicula of vehiculo.films">            
+                <td>{{pelicula}}</td>
+            </tr>
+        </tbody>
+    </table> 
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Pilotos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pilot of vehiculo.pilots">            
+                <td>{{pilot}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a mat-raised-button [routerLink]="'/vehiculos'"> <i class="material-icons">directions_car</i>&nbsp;&nbsp;Vehiculos</a>
+</div>

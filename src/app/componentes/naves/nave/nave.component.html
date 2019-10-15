@@ -1,1 +1,43 @@
-<p>nave works!</p>
+<h1>{{nave.name}}</h1>
+<div class="contenido">
+    
+    <label><b>Modelo :</b> {{nave.model}}</label><br>
+    <label><b>Fabricante :</b> {{nave.manufacturer}}</label><br>
+    <label><b>Costo en creditos : </b> {{nave.cost_in_credits}}</label><br>
+    <label><b>Longitud : </b> {{nave.length}}</label><br>
+    <label><b>Velocidad máxima atmosférica : </b> {{nave.max_atmosphering_speed}}</label><br>
+    <label><b>Tripulantes : </b> {{nave.crew}}</label><br>
+    <label><b>Pasajeros : </b> {{nave.passengers}}</label><br>
+    <label><b>Capacidad de carga : </b> {{nave.cargo_capacity}}</label><br>
+    <label><b>Combustible : </b> {{nave.consumables}}</label><br>
+    <label><b>Nivel de hiperpropulsor : </b> {{nave.hyperdrive_rating}}</label><br>
+    <label><b>MGLT : </b> {{nave.MGLT}}</label><br>
+    <label><b>Clase de nave : </b> {{nave.starship_class}}</label><br>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Pelicula</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let film of nave.films">            
+                <td>{{film}}</td>
+            </tr>
+        </tbody>
+    </table> 
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Piloto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pilot of nave.pilots">            
+                <td>{{pilot}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a mat-raised-button [routerLink]="'/naves'"> <i class="material-icons">flight</i>&nbsp;&nbsp;Naves</a>
+</div>

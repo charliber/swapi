@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { VehiculosService } from 'src/app/servicios/vehiculos.service';
+import { Vehiculo } from 'src/app/clases/vehiculo';
 
 @Component({
   selector: 'app-vehiculo',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VehiculoComponent implements OnInit {
 
-  constructor() { }
+  id:any;
+  vehiculo : Vehiculo;
+
+  constructor(private activatedRoute: ActivatedRoute,private vehiculoSrv: VehiculosService) { 
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+  }
 
   ngOnInit() {
+    this.vehiculoSrv.getVehiculo(this.id).subscribe(data => {
+      // console.log(data);
+      this.vehiculo = data;
+    });
   }
 
 }

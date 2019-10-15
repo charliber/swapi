@@ -1,1 +1,15 @@
-<p>naves works!</p>
+<h1>Naves</h1>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Detalle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let nave of naves">            
+            <td>{{nave.name}}</td>
+            <td><a mat-raised-button [routerLink]='"/nave/9"'>Ver Detalle</a></td>
+        </tr>
+    </tbody>
+</table> 
